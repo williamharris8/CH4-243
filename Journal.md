@@ -1,2 +1,1 @@
-# Journal
-Write your Journal questions and notes here.
+PHASE 1 - A queue is the right choice becuase its first in first out, so messages get processed in what order theyre sent. With a stack the newest message would go first so they'd come out 321 instead of 123. 
