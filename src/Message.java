@@ -19,6 +19,10 @@ public class Message {
         retryCount++;
     }
 
+    public int getRetryCount() {
+        return retryCount;
+    }
+
     public String toString() {
         return "ID: " + messageId + ", Payload: " + payload + ", Retries: " + retryCount;
     }
