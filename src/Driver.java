@@ -1,16 +1,14 @@
 
 public class Driver {
     public static void main(String[] args) {
-        QueueInterface<Message> queue = new LinkedQueue<>();
+        Broker broker = new Broker();
 
         try {
-            queue.enqueue(new Message("1", "First"));
-            queue.enqueue(new Message("2", "Second"));
-            queue.enqueue(new Message("3", "Third"));
+            broker.addMessage(new Message("1", "Always works", 100));
+            broker.addMessage(new Message("2", "Sometimes works", 50));
+            broker.addMessage(new Message("3", "Does not work", 0));
 
-            System.out.println(queue.dequeue());
-            System.out.println(queue.dequeue());
-            System.out.println(queue.dequeue());
+            broker.processBatch();
         } catch (QueueOverflowException | QueueUnderflowException e) {
             System.out.println(e.getMessage());
         }
